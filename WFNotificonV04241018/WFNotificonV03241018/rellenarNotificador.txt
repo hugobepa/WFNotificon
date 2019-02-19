@@ -1,0 +1,31 @@
+﻿  
+  
+  
+  
+  
+  //
+            this.cms.Items.AddRange(new ToolStripItem[] {this.cmi});
+            this.cms.Name = "cms";
+            this.cms.Size = new Size(153, 70);
+            // 
+            // CloseMenuItem
+            // 
+            this.cmi.Name = "cmi";
+            this.cmi.Size = new Size(152, 22);
+            this.cmi.Text = "Close the tray icon program";
+            this.cmi.Click += new EventHandler(this.cmi_Click);
+
+            cms.ResumeLayout(false);
+            ni.ContextMenuStrip = cms;
+
+            //
+
+			  private void cmi_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you really want to close me?",
+                    "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
+                    MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
